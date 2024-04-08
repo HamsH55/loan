@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+
 import './App.css';
+// import Card from "@mui/material/Card";
+// import CardActions from "@mui/material/CardActions";
+// import CardContent from "@mui/material/CardContent";
+//import Typography from "@mui/material/Typography";
+import LoanForm from './LoanForm';
+import { UserContext } from './context/UserContext';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <UserContext.Provider value={{
+      userName:"@HAMS",
+      name:"Hams" ,
+       email : "Hams@ditech.sa" 
+    }}>
+    <div className="App"
+    style={{
+    marginTop: "150px",
+    minWidth: 275,
+    background: "white",
+    color: "white",
+  }}>   
+        <LoanForm />
     </div>
+    </UserContext.Provider>
   );
 }
 
